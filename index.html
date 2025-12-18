@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Trip Johannesburg | Milk & Cookies Festival</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #ff6b8b;
+            --secondary: #7c5cff;
+            --accent: #ffc145;
+            --dark: #2a2d43;
+            --light: #f8f9fa;
+            --text: #333;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 45, 67, 0.8), rgba(42, 45, 67, 0.9)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .date-highlight {
+            background-color: var(--accent);
+            color: var(--dark);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Tabs Navigation */
+        .tabs-container {
+            margin-bottom: 3rem;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .tab-button:hover {
+            color: var(--primary);
+        }
+        
+        .tab-button.active {
+            color: var(--secondary);
+        }
+        
+        .tab-button.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Day Content Styling */
+        .day-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-time {
+            flex: 0 0 150px;
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Activity & Restaurant Voting Sections */
+        .voting-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .voting-section h3 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .voting-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .option-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .option-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .option-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .option-card:hover .option-image img {
+            transform: scale(1.05);
+        }
+        
+        .option-content {
+            padding: 1.5rem;
+        }
+        
+        .option-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .option-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .vote-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .vote-button:hover {
+            background-color: #ff557a;
+        }
+        
+        .suggestion-box {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .suggestion-box h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .suggestion-input {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestion-input input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .suggestion-input button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .suggestion-input button:hover {
+            background-color: #6a4dff;
+        }
+        
+        /* Airbnb Section */
+        .airbnb-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .airbnb-section h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .airbnb-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .airbnb-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .airbnb-link {
+            display: inline-block;
+            background-color: #FF5A5F;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .airbnb-link:hover {
+            background-color: #ff3b40;
+        }
+        
+        /* Festival Section */
+        .festival-section {
+            background-color: #f0f2f5;
+        }
+        
+        .festival-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .festival-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .festival-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .festival-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .festival-highlight {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Essentials Section */
+        .essentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .essential-item {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .essential-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .essential-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Countdown */
+        .countdown {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+        
+        .countdown h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 120px;
+        }
+        
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .voting-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .tab-button.active:after {
+                width: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-time {
+                flex: none;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .date-highlight {
+                font-size: 1rem;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 1rem;
+            }
+            
+            .voting-section, .airbnb-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>Joburg Girls Trip</span>
+            </div>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#itinerary">Itinerary</a></li>
+                    <li><a href="#festival">Festival</a></li>
+                    <li><a href="#essentials">Essentials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Johannesburg Girls Trip</h1>
+            <p>Three unforgettable nights of adventure, music, and friendship in the vibrant city of Johannesburg. Get ready for the Milk & Cookies Festival!</p>
+            <div class="date-highlight">January 9-12, 2026</div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <div class="container">
+        <div class="countdown">
+            <h2>Countdown to Departure</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Itinerary Section with Tabs -->
+    <section id="itinerary">
+        <div class="container">
+            <h2 class="section-title">Trip Itinerary</h2>
+            
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-button active" data-tab="day1">Day 1: Jan 9</button>
+                    <button class="tab-button" data-tab="day2">Day 2: Jan 10</button>
+                    <button class="tab-button" data-tab="day3">Day 3: Jan 11</button>
+                </div>
+                
+                <!-- Day 1 Content -->
+                <div class="tab-content active" id="day1-content">
+                    <div class="day-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">4:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Wake Up & Get Ready</h4>
+                                <p>Early start for our 6:00 AM flight connection. Pack last-minute items and ensure we have all travel documents.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">6:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Flight Departure</h4>
+                                <p>Board our flight to Johannesburg. Enjoy in-flight breakfast and entertainment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">1:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Arrival in Johannesburg</h4>
+                                <p>Land at O.R. Tambo International Airport. Collect luggage and meet our transport to the Airbnb.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">2:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Check into Airbnb</h4>
+                                <p>Arrive at our Airbnb in Sandton, check in, drop bags, and freshen up after the flight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Airbnb Section -->
+                    <div class="airbnb-section">
+                        <h3><i class="fas fa-home"></i> Our Airbnb</h3>
+                        <div class="airbnb-info">
+                            <div class="airbnb-details">
+                                <p>We'll be staying in a beautiful Airbnb in Sandton, Johannesburg. The location is central, safe, and close to all our planned activities.</p>
+                                <p><strong>Features:</strong> 3 bedrooms, 2 bathrooms, fully equipped kitchen, WiFi, swimming pool, secure parking</p>
+                                <p><strong>Check-in:</strong> After 1:00 PM on January 9</p>
+                                <p><strong>Check-out:</strong> Before 10:00 AM on January 12</p>
+                                <a href="https://www.airbnb.com/trips/shared/84d3b54e-b914-4ce1-a338-e735219eb1f5?confCode=HMYXKQJTNZ&principal_token=07be03e4-7928-4908-9303-fc7370c1334d&s=67&unique_share_id=f5b6403f-3c7a-45b1-a992-d43b5675f347" class="airbnb-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Airbnb Listing</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activities Voting Section -->
+                    <div class="voting-section">
+                        <h3><i class="fas fa-running"></i> Afternoon Activity Options</h3>
+                        <p class="text-center" style="margin-bottom: 2rem; color: #666;">Vote for your preferred afternoon activity (we'll do one of these)</p>
+                        
+                        <div class="voting-options">
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="Total ninja.jpeg" alt="Total Ninja">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Total Ninja</h4>
+                                    <p>An extreme obstacle course inspired by Ninja Warrior. Test your strength, agility and endurance on various challenging obstacles.</p>
+                                    <p><strong>Duration:</strong> 2-3 hours</p>
+                                    <p><strong>Price:</strong> R250-300 per person</p>
+                                    <button class="vote-button" data-option="total-ninja">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="Go kart.jpeg" alt="Supreme Go Karting">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Supreme Go Karting</h4>
+                                    <p>Indoor go-karting with high-speed electric karts. Race against each other on a professionally designed track with timing systems.</p>
+                                    <p><strong>Duration:</strong> 1-2 hours</p>
+                                    <p><strong>Price:</strong> R200-350 per person</p>
+                                    <button class="vote-button" data-option="go-karting">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="_ (28).jpeg" alt="Bowling">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Bowling</h4>
+                                    <p>Classic bowling fun with music, food, and drinks. A more relaxed option perfect for our first day after traveling.</p>
+                                    <p><strong>Duration:</strong> 1-2 hours</p>
+                                    <p><strong>Price:</strong> R150-250 per person</p>
+                                    <button class="vote-button" data-option="bowling">Vote for This</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="suggestion-box">
+                            <h4>Suggest Another Activity</h4>
+                            <p>Have another activity in mind? Suggest it below!</p>
+                            <div class="suggestion-input">
+                                <input type="text" id="activity-suggestion" placeholder="Enter your activity suggestion...">
+                                <button id="submit-activity">Submit</button>
+                            </div>
+                            <div id="activity-suggestions-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dinner Voting Section -->
+                    <div class="voting-section">
+                        <h3><i class="fas fa-utensils"></i> Dinner Restaurant Options</h3>
+                        <p class="text-center" style="margin-bottom: 2rem; color: #666;">Vote for your preferred dinner restaurant (we'll choose one)</p>
+                        
+                        <div class="voting-options">
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Saint Restaurant">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Saint Restaurant Sandton</h4>
+                                    <p>Modern fine dining with a focus on seasonal ingredients. Elegant atmosphere with exceptional service.</p>
+                                    <p><strong>Cuisine:</strong> Modern International</p>
+                                    <p><strong>Price Range:</strong> R400-800 per person</p>
+                                    <button class="vote-button" data-option="saint-restaurant">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kol Izakaya">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Kol Izakaya Restaurant Sandton</h4>
+                                    <p>Authentic Japanese Izakaya (pub) with sushi, yakitori, and Japanese small plates. Casual and lively atmosphere.</p>
+                                    <p><strong>Cuisine:</strong> Japanese</p>
+                                    <p><strong>Price Range:</strong> R250-500 per person</p>
+                                    <button class="vote-button" data-option="kol-izakaya">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mosso Savour Turkish">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Mosso Savour Turkish Restaurant</h4>
+                                    <p>Authentic Turkish cuisine with mezze platters, kebabs, and traditional desserts. Warm, Mediterranean ambiance.</p>
+                                    <p><strong>Cuisine:</strong> Turkish</p>
+                                    <p><strong>Price Range:</strong> R200-450 per person</p>
+                                    <button class="vote-button" data-option="mosso-turkish">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aman Restaurant">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Aman Restaurant</h4>
+                                    <p>Contemporary Asian fusion with stunning presentation. Known for creative cocktails and elegant dining experience.</p>
+                                    <p><strong>Cuisine:</strong> Asian Fusion</p>
+                                    <p><strong>Price Range:</strong> R350-700 per person</p>
+                                    <button class="vote-button" data-option="aman-restaurant">Vote for This</button>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The 11th Floor">
+                                </div>
+                                <div class="option-content">
+                                    <h4>The 11th Floor Restaurant</h4>
+                                    <p>Rooftop dining with panoramic views of Sandton. Modern South African cuisine with excellent wine selection.</p>
+                                    <p><strong>Cuisine:</strong> South African</p>
+                                    <p><strong>Price Range:</strong> R300-650 per person</p>
+                                    <button class="vote-button" data-option="11th-floor">Vote for This</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="suggestion-box">
+                            <h4>Suggest Another Restaurant</h4>
+                            <p>Know another great restaurant in Sandton? Suggest it below!</p>
+                            <div class="suggestion-input">
+                                <input type="text" id="restaurant-suggestion" placeholder="Enter your restaurant suggestion...">
+                                <button id="submit-restaurant">Submit</button>
+                            </div>
+                            <div id="restaurant-suggestions-list"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 Content -->
+                <div class="tab-content" id="day2-content">
+                    <div class="day-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">7:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Wake Up & Breakfast</h4>
+                                <p>Good morning! Wake up refreshed and have breakfast at the Airbnb. Prepare for festival day!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">9:00 AM - 11:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Festival Preparation</h4>
+                                <p>Get ready in our festival outfits - comfortable yet stylish! Apply sunscreen, pack festival essentials (water, cash, power bank).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:30 AM</div>
+                            <div class="timeline-content">
+                                <h4>Depart for Festival</h4>
+                                <p>Transport to the Milk & Cookies Festival venue at Johannesburg Expo Centre.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">12:00 PM - 11:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Milk & Cookies Festival!</h4>
+                                <p>Enjoy a full day of music, dancing, food trucks, art installations, and unforgettable experiences at Johannesburg's hottest festival!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Return to Airbnb</h4>
+                                <p>Transport back to our Airbnb. Time to rest after an amazing festival day!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Festival Details -->
+                    <div class="festival-section">
+                        <h3>Milk & Cookies Festival Details</h3>
+                        <div class="festival-container">
+                            <div class="festival-info">
+                                <p>The Milk & Cookies Festival is Johannesburg's premier music and lifestyle festival, bringing together the best local and international artists for a day of unforgettable entertainment.</p>
+                                
+                                <div class="festival-highlight">
+                                    <h4><i class="fas fa-info-circle"></i> Festival Details</h4>
+                                    <ul>
+                                        <li><strong>Date:</strong> January 10, 2026</li>
+                                        <li><strong>Venue:</strong> Johannesburg Expo Centre, Nasrec</li>
+                                        <li><strong>Time:</strong> 12:00 PM - 11:00 PM</li>
+                                        <li><strong>Dress Code:</strong> Festival chic - comfortable yet stylish!</li>
+                                        <li><strong>Tickets:</strong> Early bird tickets available from September 2025</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="festival-highlight">
+                                    <h4><i class="fas fa-star"></i> Highlights</h4>
+                                    <ul>
+                                        <li>Multiple music stages featuring various genres</li>
+                                        <li>Food trucks and gourmet treats</li>
+                                        <li>Art installations and photo zones</li>
+                                        <li>Dance workshops and interactive experiences</li>
+                                        <li>Silent disco and after-parties</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="festival-image">
+                                <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Festival Atmosphere">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 Content -->
+                <div class="tab-content" id="day3-content">
+                    <div class="day-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">9:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Wake Up & Pack</h4>
+                                <p>Wake up at a comfortable time. Start packing our bags as we'll be checking out the next morning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:30 AM</div>
+                            <div class="timeline-content">
+                                <h4>Head to Sandton City Mall</h4>
+                                <p>Transport to Sandton City Mall, Africa's largest shopping complex.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:00 AM - 1:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Shopping Spree</h4>
+                                <p>Explore the mall's many stores for souvenirs, fashion, and last-minute purchases. Stores include international brands and local designers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">1:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Brunch at Mall Restaurant</h4>
+                                <p>Enjoy brunch at one of the mall's many restaurants. Options include both casual cafes and sit-down restaurants.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">3:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Transport to Gold Reef City</h4>
+                                <p>Head to Gold Reef City theme park and entertainment complex.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">3:30 PM - 8:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Gold Reef City Adventure</h4>
+                                <p>Enjoy thrill rides, shows, and attractions at this famous theme park built on an old gold mine. Don't miss the gold mine tour!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-time">8:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Return to Airbnb</h4>
+                                <p>Head back to our Airbnb to relax, have a light dinner, and finish packing for our departure tomorrow.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shopping & Gold Reef City Info -->
+                    <div class="voting-section">
+                        <h3><i class="fas fa-info-circle"></i> Day 3 Information</h3>
+                        
+                        <div class="voting-options">
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sandton City Mall">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Sandton City Mall</h4>
+                                    <p>Africa's largest shopping complex with over 300 stores including international brands like Zara, H&M, and Apple, plus local designers and specialty stores.</p>
+                                    <p><strong>Highlights:</strong> Designer boutiques, food court, cinema, rooftop restaurants</p>
+                                    <p><strong>Opening Hours:</strong> 9:00 AM - 7:00 PM (Weekdays), 9:00 AM - 5:00 PM (Saturday), 10:00 AM - 5:00 PM (Sunday)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card">
+                                <div class="option-image">
+                                    <img src="Gold Reef City 🎡.jpeg" alt="Gold Reef City">
+                                </div>
+                                <div class="option-content">
+                                    <h4>Gold Reef City</h4>
+                                    <p>Theme park and entertainment complex built around a historic gold mine. Features thrill rides, family attractions, shows, and an underground mine tour.</p>
+                                    <p><strong>Highlights:</strong> Anaconda roller coaster, Tower of Terror, 4D Theatre, Gold Mine Tour</p>
+                                    <p><strong>Opening Hours:</strong> 9:30 AM - 5:00 PM (Weekdays), 9:30 AM - 6:00 PM (Weekends)</p>
+                                    <p><strong>Ticket Price:</strong> R250-400 per person</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essentials Section -->
+    <section id="essentials">
+        <div class="container">
+            <h2 class="section-title">Trip Essentials</h2>
+            <div class="essentials-grid">
+                <div class="essential-item">
+                    <i class="fas fa-suitcase"></i>
+                    <h3>What to Pack</h3>
+                    <p>Comfortable shoes, festival outfit, sunscreen, hat, swimwear, and evening wear for dinners out.</p>
+                </div>
+                
+                <div class="essential-item">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Important Documents</h3>
+                    <p>Valid ID/Passport, medical insurance card, festival tickets, and hotel reservation details.</p>
+                </div>
+                
+                <div class="essential-item">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Money Matters</h3>
+                    <p>Local currency (ZAR), credit/debit cards, and a small amount of cash for vendors.</p>
+                </div>
+                
+                <div class="essential-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Health & Safety</h3>
+                    <p>Prescription medications, basic first aid, hand sanitizer, and emergency contact numbers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Trip Details</h3>
+                    <p><i class="fas fa-calendar-alt"></i> January 9-12, 2026</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+                    <p><i class="fas fa-users"></i> Girls Trip - 4 Days, 3 Nights</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="#itinerary" style="color: white; text-decoration: none;">Itinerary</a></li>
+                        <li><a href="#festival" style="color: white; text-decoration: none;">Festival</a></li>
+                        <li><a href="#essentials" style="color: white; text-decoration: none;">Essentials</a></li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Festival Info</h3>
+                    <p><i class="fas fa-cookie-bite"></i> Milk & Cookies Festival</p>
+                    <p><i class="fas fa-calendar-day"></i> January 10, 2026</p>
+                    <p><i class="fas fa-map-pin"></i> Johannesburg Expo Centre</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Johannesburg Girls Trip. All rights reserved. | Designed with ❤️ for an unforgettable adventure</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Countdown Timer - Updated to January 9, 2026
+        function updateCountdown() {
+            // Set the trip start date (January 9, 2026 at 00:00:00)
+            const tripDate = new Date('2026-01-09T00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = tripDate - now;
+            
+            // If the trip date has passed, show zeros
+            if (timeLeft < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Update the countdown display
+            document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+            document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Tab Switching Functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // Voting functionality
+        document.querySelectorAll('.vote-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const option = this.getAttribute('data-option');
+                alert(`Thank you for voting for ${option.replace('-', ' ')}! Your vote has been recorded.`);
+                
+                // Reset all buttons to default state
+                document.querySelectorAll('.vote-button').forEach(btn => {
+                    btn.textContent = 'Vote for This';
+                    btn.style.backgroundColor = '';
+                });
+                
+                // Highlight selected button
+                this.textContent = '✓ Voted!';
+                this.style.backgroundColor = '#4CAF50';
+            });
+        });
+        
+        // Suggestion functionality
+        document.getElementById('submit-activity').addEventListener('click', function() {
+            const suggestion = document.getElementById('activity-suggestion').value;
+            if (suggestion.trim() !== '') {
+                const list = document.getElementById('activity-suggestions-list');
+                const newSuggestion = document.createElement('div');
+                newSuggestion.className = 'suggestion-item';
+                newSuggestion.innerHTML = `<p><strong>New suggestion:</strong> ${suggestion}</p>`;
+                list.appendChild(newSuggestion);
+                document.getElementById('activity-suggestion').value = '';
+                alert('Thank you for your activity suggestion!');
+            }
+        });
+        
+        document.getElementById('submit-restaurant').addEventListener('click', function() {
+            const suggestion = document.getElementById('restaurant-suggestion').value;
+            if (suggestion.trim() !== '') {
+                const list = document.getElementById('restaurant-suggestions-list');
+                const newSuggestion = document.createElement('div');
+                newSuggestion.className = 'suggestion-item';
+                newSuggestion.innerHTML = `<p><strong>New suggestion:</strong> ${suggestion}</p>`;
+                list.appendChild(newSuggestion);
+                document.getElementById('restaurant-suggestion').value = '';
+                alert('Thank you for your restaurant suggestion!');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
